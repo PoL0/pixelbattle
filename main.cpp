@@ -1,19 +1,30 @@
 #include <SFML/Graphics.hpp>
-#include <iostream> // For the cout
+#include <iostream>             // For the cout
 #include <unistd.h>
 
 #include "spritehelper.h"
+#include "animationhelper.h"
+
+#define an AnimationHelper::animationFrame
 
 using namespace sf;
 
 int main()
 {
     RenderWindow window(sf::VideoMode(1024, 768), "");
+    window. setFramerateLimit(10);
 
-    SpriteHelper sh("sprites/sheet.png");
+    SpriteHelper::Instance()->setSheet("sprites/sheet.png");
+
+    RectangleShape bg;
+
+    bg.setSize(sf::Vector2f(1024, 768));
+    bg.setFillColor(Color(255,255,255));
 
     bool phase = true;
+    int step = 0;
 
+    // Game loop n shit
     while (window.isOpen()){
 
         // Window-closing events
@@ -28,11 +39,14 @@ int main()
         // TODO - modify to draw when it needs to instead of always
         window.clear();
 
+        window.draw(bg);
+
         if(phase){
-            window.draw(sh.getSprite(0,0));
+            window.draw(AnimationHelper::Instance()->getAnimation(an::SOLDIER_STAND_RIGHT, 20+step, 20));
         } else {
-            window.draw(sh.getSprite(1,0));
+            window.draw(AnimationHelper::Instance()->getAnimation(an::SOLDIER_WALK_RIGHT, 20+step, 20));
         }
+      step+=3;
 
         phase = !phase;
 
