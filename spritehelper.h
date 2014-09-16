@@ -1,4 +1,4 @@
-// Spritehelper.h 
+// spritehelper.h 
 // Trevor
 
 #include <SFML/Graphics.hpp>
@@ -9,5 +9,8 @@ using namespace sf;
 class SpriteHelper {
 public:
   SpriteHelper(std::string filepath);
-  Texture spriteSheetTexture;
+  Sprite getSprite(int x, int y);
+ private:
+  Texture mainTexture;
+  Sprite  mainSpriteSheet;
 };

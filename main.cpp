@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include <iostream> 
+#include <iostream> // For the cout
+#include <unistd.h>
 
 #include "spritehelper.h"
 
@@ -11,11 +12,7 @@ int main()
 
     SpriteHelper sh("sprites/sheet.png");
 
-    //Sprite sprite;
-    //sprite.setTexture(texture);
-
-    //sprite.setPosition(Vector2f(60, 60));
-    //sprite.setTextureRect(sf::IntRect(10, 10, 32, 32));
+    bool phase = true;
 
     while (window.isOpen()){
 
@@ -30,8 +27,17 @@ int main()
         // frame cleanup
         // TODO - modify to draw when it needs to instead of always
         window.clear();
-        //window.draw(sprite);
+
+        if(phase){
+            window.draw(sh.getSprite(0,0));
+        } else {
+            window.draw(sh.getSprite(1,0));
+        }
+
+        phase = !phase;
+
         window.display();
+
     }
 
     return 0;
