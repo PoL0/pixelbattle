@@ -1,22 +1,21 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Image.hpp>
-#include <stdio.h>
+#include <iostream> 
+
+#include "spritehelper.h"
 
 using namespace sf;
 
 int main()
 {
     RenderWindow window(sf::VideoMode(1024, 768), "");
-    
-    sf::Texture texture;
-    if (!texture.loadFromFile("sprites/GreenDarknut.png")){
-        printf("Shit");
-    }
 
-    Sprite sprite;
-    sprite.setTexture(texture);
+    SpriteHelper sh("sprites/sheet.png");
 
-    sprite.setPosition(Vector2f(60, 60));
+    //Sprite sprite;
+    //sprite.setTexture(texture);
+
+    //sprite.setPosition(Vector2f(60, 60));
+    //sprite.setTextureRect(sf::IntRect(10, 10, 32, 32));
 
     while (window.isOpen()){
 
@@ -28,13 +27,10 @@ int main()
                 window.close();
         }
 
-        texture.setSmooth(true);
-        sprite.rotate(1);
-
         // frame cleanup
         // TODO - modify to draw when it needs to instead of always
         window.clear();
-        window.draw(sprite);
+        //window.draw(sprite);
         window.display();
     }
 

@@ -1,6 +1,5 @@
 all:
-	g++ -c main.cpp
-	g++ main.o -o app -lsfml-graphics -lsfml-window -lsfml-system
+	g++ *.cpp -lsfml-graphics -lsfml-window -lsfml-system -o app
 clean:
-	$(RM) main.o
+	$(RM) *.o
 	$(RM) app
