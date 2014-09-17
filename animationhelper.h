@@ -7,8 +7,9 @@ using namespace sf;
 class AnimationHelper {
 public:
 	enum class animationFrame {
-		SOLDIER_STAND_RIGHT,
-		SOLDIER_WALK_RIGHT
+		BLUE_SOLDIER_STAND_RIGHT,
+		BLUE_SOLDIER_WALK_RIGHT,
+		BLUE_HELMET_NEOLITHIC_FANCY_RIGHT
 	};
 	static AnimationHelper* Instance();
 	void setSheet(std::string filepath);

@@ -41,9 +41,11 @@ int main()
         window.draw(bg);
 
         if(phase){
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::SOLDIER_STAND_RIGHT, 20+step, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLUE_SOLDIER_STAND_RIGHT, 20+step, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLUE_HELMET_NEOLITHIC_FANCY_RIGHT, 20+step, 20));
         } else {
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::SOLDIER_WALK_RIGHT, 20+step, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLUE_SOLDIER_WALK_RIGHT, 20+step, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLUE_HELMET_NEOLITHIC_FANCY_RIGHT, 20+step, 21));
         }
       step+=3;
 

@@ -20,10 +20,12 @@ AnimationHelper* AnimationHelper::Instance(){
 
 Sprite* AnimationHelper::getAnimation(animationFrame frame, int x_draw, int y_draw){
 	switch(frame){
-		case animationFrame::SOLDIER_STAND_RIGHT:
+		case animationFrame::BLUE_SOLDIER_STAND_RIGHT:
 			return this->getSprite(x_draw, y_draw, 0, 0);
-		case animationFrame::SOLDIER_WALK_RIGHT:
+		case animationFrame::BLUE_SOLDIER_WALK_RIGHT:
 			return this->getSprite(x_draw, y_draw, 0, 1);
+		case animationFrame::BLUE_HELMET_NEOLITHIC_FANCY_RIGHT: 	
+			return this->getSprite(x_draw, y_draw, 0, 8);
 		default:
 			break;
 	}
