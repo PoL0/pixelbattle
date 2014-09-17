@@ -2,7 +2,6 @@
 #include <iostream>             // For the cout
 #include <unistd.h>
 
-#include "spritehelper.h"
 #include "animationhelper.h"
 
 #define an AnimationHelper::animationFrame
@@ -14,7 +13,7 @@ int main()
     RenderWindow window(sf::VideoMode(1024, 768), "");
     window. setFramerateLimit(10);
 
-    SpriteHelper::Instance()->setSheet("sprites/sheet.png");
+    AnimationHelper::Instance()->setSheet("sprites/sheet.png");
 
     RectangleShape bg;
 
@@ -42,9 +41,9 @@ int main()
         window.draw(bg);
 
         if(phase){
-            window.draw(AnimationHelper::Instance()->getAnimation(an::SOLDIER_STAND_RIGHT, 20+step, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::SOLDIER_STAND_RIGHT, 20+step, 20));
         } else {
-            window.draw(AnimationHelper::Instance()->getAnimation(an::SOLDIER_WALK_RIGHT, 20+step, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::SOLDIER_WALK_RIGHT, 20+step, 20));
         }
       step+=3;
 

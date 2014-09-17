@@ -11,8 +11,14 @@ public:
 		SOLDIER_WALK_RIGHT
 	};
 	static AnimationHelper* Instance();
-	Sprite getAnimation(animationFrame frame, int x_draw, int y_draw);
+	void setSheet(std::string filepath);
+	Sprite* getAnimation(animationFrame frame, int x_draw, int y_draw);
  private:
  	AnimationHelper(){};
  	static AnimationHelper* m_pInstance;
+
+ 	Sprite* getSprite(int x_draw, int y_draw, int column, int row);
+
+ 	Texture mainTexture;
+	Sprite  mainSpriteSheet;
 };
