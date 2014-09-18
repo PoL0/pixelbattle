@@ -16,7 +16,8 @@ public:
 		BLU_SOL_FLE_RIT, /* Blue soldier, flee right, frame 1 */
 		BLU_SOL_FL2_RIT, /* Blue soldier, flee right, frame 2 */
 		BLU_HED_NEO_RIT, /* Blue Headdress, facing right, neolithic era */
-		BLU_HE2_NEO_RIT  /* Blue Headdress, fleeing, facing right, neolithic era */
+		BLU_HE2_NEO_RIT, /* Blue Headdress, fleeing, facing right, neolithic era */
+		BLU_HEL_NEO_RIT  /* Blue Helmet, Facing right, neolithic era */
 	};
 	static AnimationHelper* Instance();
 	void setSheet(std::string filepath);

@@ -17,7 +17,7 @@ int main()
 
     RectangleShape bg;
 
-    bg.setSize(sf::Vector2f(1024, 768));
+    bg.setSize(sf::Vector2f(1024, 1024));
     bg.setFillColor(Color(255,255,255));
 
     bool phase = true;
@@ -41,11 +41,17 @@ int main()
         window.draw(bg);
 
         if(phase){
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_STD_RIT, 20+step, 20));
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HED_NEO_RIT, 20+step, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_STD_RIT, 20+step%1024, 40));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HED_NEO_RIT, 20+step%1024, 40));
+
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_STD_RIT, 20+step%1024, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HEL_NEO_RIT, 20+step%1024, 20));
         } else {
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_WAK_RIT, 20+step, 20));
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HED_NEO_RIT, 20+step, 21));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_WAK_RIT, 20+step%1024, 40));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HED_NEO_RIT, 20+step%1024, 41));
+
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_WAK_RIT, 20+step%1024, 20));
+            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HEL_NEO_RIT, 20+step%1024, 21));
         }
       step+=3;
 
