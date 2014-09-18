@@ -43,6 +43,9 @@ Sprite* AnimationHelper::getAnimation(animationFrame frame, int x_draw, int y_dr
 			return this->getSprite(x_draw, y_draw, 0, 9);
 		case animationFrame::BLU_HEL_NEO_RIT:
 			return this->getSprite(x_draw, y_draw, 0, 10);
+
+		case animationFrame::TIL_GRD_GRS_FLW:
+			return this->getSprite(x_draw, y_draw, 16, 0);
 		default:
 			break;
 	}

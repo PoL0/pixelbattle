@@ -3,8 +3,7 @@
 #include <unistd.h>
 
 #include "animationhelper.h"
-
-#define an AnimationHelper::animationFrame
+#include "rtsdrawable.h"
 
 using namespace sf;
 
@@ -15,13 +14,25 @@ int main()
 
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
 
+    RTSDrawable one(&window);
+    one.setFrame(AnimationHelper::animationFrame::TIL_GRD_GRS_FLW);
+    one.setX(20);
+    one.setY(20);
+
+    RTSDrawable two(&window);
+    two.setFrame(AnimationHelper::animationFrame::TIL_GRD_GRS_FLW);
+    two.setX(36);
+    two.setY(20);
+
+    RTSDrawable three(&window);
+    three.setFrame(AnimationHelper::animationFrame::BLU_SOL_STD_RIT);
+    three.setX(20);
+    three.setY(20);
+
     RectangleShape bg;
 
-    bg.setSize(sf::Vector2f(1024, 1024));
+    bg.setSize(sf::Vector2f(1024, 768));
     bg.setFillColor(Color(255,255,255));
-
-    bool phase = true;
-    int step = 0;
 
     // Game loop n shit
     while (window.isOpen()){
@@ -40,22 +51,9 @@ int main()
 
         window.draw(bg);
 
-        if(phase){
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_STD_RIT, 20+step%1024, 40));
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HED_NEO_RIT, 20+step%1024, 40));
-
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_STD_RIT, 20+step%1024, 20));
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HEL_NEO_RIT, 20+step%1024, 20));
-        } else {
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_WAK_RIT, 20+step%1024, 40));
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HED_NEO_RIT, 20+step%1024, 41));
-
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_SOL_WAK_RIT, 20+step%1024, 20));
-            window.draw(* AnimationHelper::Instance()->getAnimation(an::BLU_HEL_NEO_RIT, 20+step%1024, 21));
-        }
-      step+=3;
-
-        phase = !phase;
+        one.draw();
+        two.draw();
+        three.draw();
 
         window.display();
 

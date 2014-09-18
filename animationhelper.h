@@ -1,5 +1,8 @@
 // animation.h
 // Trevor
+
+#pragma once
+
 #include <SFML/Graphics.hpp>    // for use of Texture and Sprite
 
 using namespace sf;
@@ -17,7 +20,9 @@ public:
 		BLU_SOL_FL2_RIT, /* Blue soldier, flee right, frame 2 */
 		BLU_HED_NEO_RIT, /* Blue Headdress, facing right, neolithic era */
 		BLU_HE2_NEO_RIT, /* Blue Headdress, fleeing, facing right, neolithic era */
-		BLU_HEL_NEO_RIT  /* Blue Helmet, Facing right, neolithic era */
+		BLU_HEL_NEO_RIT, /* Blue Helmet, Facing right, neolithic era */
+
+		TIL_GRD_GRS_FLW  /* Tile, ground, made of grass, has flowers */ 
 	};
 	static AnimationHelper* Instance();
 	void setSheet(std::string filepath);
