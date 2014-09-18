@@ -4,6 +4,7 @@
 
 #include "animationhelper.h"
 #include "rtsdrawable.h"
+#include "rtsmovable.h"
 
 using namespace sf;
 
@@ -14,17 +15,7 @@ int main()
 
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
 
-    RTSDrawable one(&window);
-    one.setFrame(AnimationHelper::animationFrame::TIL_GRD_GRS_FLW);
-    one.setX(20);
-    one.setY(20);
-
-    RTSDrawable two(&window);
-    two.setFrame(AnimationHelper::animationFrame::TIL_GRD_GRS_FLW);
-    two.setX(36);
-    two.setY(20);
-
-    RTSDrawable three(&window);
+    RTSMovable three(&window);
     three.setFrame(AnimationHelper::animationFrame::BLU_SOL_STD_RIT);
     three.setX(20);
     three.setY(20);
@@ -51,8 +42,6 @@ int main()
 
         window.draw(bg);
 
-        one.draw();
-        two.draw();
         three.draw();
 
         window.display();
