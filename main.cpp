@@ -20,6 +20,8 @@ int main()
     three.setX(20);
     three.setY(20);
 
+    three.moveto(100,80);
+
     RectangleShape bg;
 
     bg.setSize(sf::Vector2f(1024, 768));
