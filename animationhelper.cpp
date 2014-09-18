@@ -18,14 +18,29 @@ AnimationHelper* AnimationHelper::Instance(){
 	return m_pInstance;
 }
 
+// Bigass switch statement... yechh
 Sprite* AnimationHelper::getAnimation(animationFrame frame, int x_draw, int y_draw){
 	switch(frame){
-		case animationFrame::BLUE_SOLDIER_STAND_RIGHT:
+		case animationFrame::BLU_SOL_STD_RIT:
 			return this->getSprite(x_draw, y_draw, 0, 0);
-		case animationFrame::BLUE_SOLDIER_WALK_RIGHT:
+		case animationFrame::BLU_SOL_WAK_RIT:
 			return this->getSprite(x_draw, y_draw, 0, 1);
-		case animationFrame::BLUE_HELMET_NEOLITHIC_FANCY_RIGHT: 	
+		case animationFrame::BLU_SOL_JAB_RIT:
+			return this->getSprite(x_draw, y_draw, 0, 2);
+		case animationFrame::BLU_SOL_SLH_RIT:
+			return this->getSprite(x_draw, y_draw, 0, 3);
+		case animationFrame::BLU_SOL_SL2_RIT:
+			return this->getSprite(x_draw, y_draw, 0, 4);
+		case animationFrame::BLU_SOL_SHT_RIT:
+			return this->getSprite(x_draw, y_draw, 0, 5);
+		case animationFrame::BLU_SOL_FLE_RIT:
+			return this->getSprite(x_draw, y_draw, 0, 6);
+		case animationFrame::BLU_SOL_FL2_RIT:
+			return this->getSprite(x_draw, y_draw, 0, 7);
+		case animationFrame::BLU_HED_NEO_RIT:
 			return this->getSprite(x_draw, y_draw, 0, 8);
+		case animationFrame::BLU_HE2_NEO_RIT:
+			return this->getSprite(x_draw, y_draw, 0, 10);
 		default:
 			break;
 	}

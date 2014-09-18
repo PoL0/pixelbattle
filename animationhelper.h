@@ -7,9 +7,16 @@ using namespace sf;
 class AnimationHelper {
 public:
 	enum class animationFrame {
-		BLUE_SOLDIER_STAND_RIGHT,
-		BLUE_SOLDIER_WALK_RIGHT,
-		BLUE_HELMET_NEOLITHIC_FANCY_RIGHT
+		BLU_SOL_STD_RIT, /* Blue soldier, stand right */
+		BLU_SOL_WAK_RIT, /* Blue soldier, walk right */
+		BLU_SOL_JAB_RIT, /* Blue soldier, jab right */
+		BLU_SOL_SLH_RIT, /* Blue soldier, slash right, frame 1 */
+		BLU_SOL_SL2_RIT, /* Blue soldier, slash right, frame 2 */
+		BLU_SOL_SHT_RIT, /* Blue soldier, shoot right */
+		BLU_SOL_FLE_RIT, /* Blue soldier, flee right, frame 1 */
+		BLU_SOL_FL2_RIT, /* Blue soldier, flee right, frame 2 */
+		BLU_HED_NEO_RIT, /* Blue Headdress, facing right, neolithic era */
+		BLU_HE2_NEO_RIT  /* Blue Headdress, fleeing, facing right, neolithic era */
 	};
 	static AnimationHelper* Instance();
 	void setSheet(std::string filepath);
