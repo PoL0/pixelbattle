@@ -15,17 +15,25 @@ int main()
 
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
 
-    RTSMovable three(&window);
-    three.setFrame(AnimationHelper::animationFrame::BLU_SOL_STD_RIT);
-    three.setX(20);
-    three.setY(20);
+    RTSMovable one(&window);
+    one.setX(0);
+    one.setY(0);
+    one.moveto(0,50);
 
-    three.moveto(100,80);
+    RTSMovable two(&window);
+    two.setX(0);
+    two.setY(0);
+    two.moveto(50,0);
+
+    RTSMovable three(&window);
+    three.setX(0);
+    three.setY(0);
+    three.moveto(50,50);
 
     RectangleShape bg;
 
     bg.setSize(sf::Vector2f(1024, 768));
-    bg.setFillColor(Color(255,255,255));
+    bg.setFillColor(Color(100,181,59));
 
     // Game loop n shit
     while (window.isOpen()){
@@ -38,12 +46,12 @@ int main()
                 window.close();
         }
 
-        // frame cleanup
-        // TODO - modify to draw when it needs to instead of always
         window.clear();
 
         window.draw(bg);
 
+        one.draw();
+        two.draw();
         three.draw();
 
         window.display();

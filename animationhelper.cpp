@@ -44,8 +44,39 @@ Sprite* AnimationHelper::getAnimation(animationFrame frame, int x_draw, int y_dr
 		case animationFrame::BLU_HEL_NEO_RIT:
 			return this->getSprite(x_draw, y_draw, 0, 10);
 
-		case animationFrame::TIL_GRD_GRS_FLW:
+		case animationFrame::BLU_SOL_STD_LFT:
+			return this->getSprite(x_draw, y_draw, 1, 0);
+		case animationFrame::BLU_SOL_STD_DWN:
+			return this->getSprite(x_draw, y_draw, 2, 0);
+		case animationFrame::BLU_SOL_STD_UPP:
+			return this->getSprite(x_draw, y_draw, 3, 0);
+
+		/* Testing sprites, only for abstract RTSMovable class */
+		case animationFrame::TST_ARW_STD_RIT:
 			return this->getSprite(x_draw, y_draw, 16, 0);
+		case animationFrame::TST_ARW_WK1_RIT:
+			return this->getSprite(x_draw, y_draw, 16, 1);
+		case animationFrame::TST_ARW_WK2_RIT:
+			return this->getSprite(x_draw, y_draw, 16, 2);
+		case animationFrame::TST_ARW_STD_LFT:
+			return this->getSprite(x_draw, y_draw, 17, 0);
+		case animationFrame::TST_ARW_WK1_LFT:
+			return this->getSprite(x_draw, y_draw, 17, 1);
+		case animationFrame::TST_ARW_WK2_LFT:
+			return this->getSprite(x_draw, y_draw, 17, 2);
+		case animationFrame::TST_ARW_STD_DWN:
+			return this->getSprite(x_draw, y_draw, 18, 0);
+		case animationFrame::TST_ARW_WK1_DWN:
+			return this->getSprite(x_draw, y_draw, 18, 1);
+		case animationFrame::TST_ARW_WK2_DWN:
+			return this->getSprite(x_draw, y_draw, 18, 2);
+		case animationFrame::TST_ARW_STD_UPP:
+			return this->getSprite(x_draw, y_draw, 19, 0);
+		case animationFrame::TST_ARW_WK1_UPP:
+			return this->getSprite(x_draw, y_draw, 19, 1);
+		case animationFrame::TST_ARW_WK2_UPP:
+			return this->getSprite(x_draw, y_draw, 19, 2);
+
 		default:
 			break;
 	}
