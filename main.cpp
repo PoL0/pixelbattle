@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/Window/Mouse.hpp>
 #include <iostream>             // For the cout
 #include <unistd.h>
 
@@ -21,24 +20,26 @@ int main()
     Cursor cursor(&window);
 
     RTSMovable one(&window);
-    one.setX(0);
-    one.setY(0);
-    one.moveto(0,50);
+    one.setX(20);
+    one.setY(20);
+    one.moveto(200,40);
 
     RTSMovable two(&window);
-    two.setX(0);
-    two.setY(0);
-    two.moveto(50,0);
+    two.setX(20);
+    two.setY(40);
+    two.moveto(200,60);
 
     RTSMovable three(&window);
-    three.setX(0);
-    three.setY(0);
-    three.moveto(50,50);
+    three.setX(20);
+    three.setY(60);
+    three.moveto(200,80);
 
     RectangleShape bg;
 
     bg.setSize(sf::Vector2f(1920, 1080));
     bg.setFillColor(Color(100,181,59));
+
+    int frameCount = 0;
 
     // Game loop n shit
     while (window.isOpen()){
@@ -51,19 +52,19 @@ int main()
                 window.close();
         }
 
-        window.clear();
-
         window.draw(bg);
 
-        one.draw();
-        two.draw();
-        three.draw();
+        one.draw(frameCount);
+        two.draw(frameCount);
+        if(frameCount > 46){
+            three.draw(frameCount);
+        }
 
-        cursor.setX(Mouse::getPosition(window).x);
-        cursor.setY(Mouse::getPosition(window).y);
         cursor.draw();
 
         window.display();
+
+        frameCount++;
 
     }
 

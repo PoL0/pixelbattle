@@ -44,10 +44,10 @@ public:
 		TST_ARW_WK1_UPP, /* Test arrow, walking, frame 1, up */
 		TST_ARW_WK2_UPP, /* Test arrow, walking, frame 2, up */
 
+		/* Parts of the cursor */
 		CURSOR_PART_1,
 		CURSOR_PART_2,
 		CURSOR_PART_3,
-		CURSOR_PART_4,
 
 	};
 	static AnimationHelper* Instance();

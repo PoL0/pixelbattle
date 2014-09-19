@@ -81,10 +81,8 @@ Sprite* AnimationHelper::getAnimation(animationFrame frame, int x_draw, int y_dr
 		case animationFrame::CURSOR_PART_1:
 			return this->getSprite(x_draw, y_draw, 16, 3);
 		case animationFrame::CURSOR_PART_2:
-			return this->getSprite(x_draw, y_draw, 16, 4);
-		case animationFrame::CURSOR_PART_3:
 			return this->getSprite(x_draw, y_draw, 17, 3);
-		case animationFrame::CURSOR_PART_4:
+		case animationFrame::CURSOR_PART_3:
 			return this->getSprite(x_draw, y_draw, 17, 4);
 
 		default:
