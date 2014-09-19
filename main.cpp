@@ -6,19 +6,19 @@
 #include "animationhelper.h"
 #include "rtsdrawable.h"
 #include "rtsmovable.h"
+#include "cursor.h"
 
 using namespace sf;
 
 int main()
 {
-    RenderWindow window(sf::VideoMode(1024, 768), "");
+    RenderWindow window(sf::VideoMode(1920, 1080), "Pixel Battle");
     window. setFramerateLimit(60);
     window.setMouseCursorVisible(false);
 
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
 
-    RTSDrawable cursor(&window);
-    cursor.setFrame(AnimationHelper::animationFrame::CURSOR_PART_1);
+    Cursor cursor(&window);
 
     RTSMovable one(&window);
     one.setX(0);
@@ -37,7 +37,7 @@ int main()
 
     RectangleShape bg;
 
-    bg.setSize(sf::Vector2f(1024, 768));
+    bg.setSize(sf::Vector2f(1920, 1080));
     bg.setFillColor(Color(100,181,59));
 
     // Game loop n shit
