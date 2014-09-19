@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Window/Mouse.hpp>
 #include <iostream>             // For the cout
 #include <unistd.h>
 
@@ -11,9 +12,13 @@ using namespace sf;
 int main()
 {
     RenderWindow window(sf::VideoMode(1024, 768), "");
-    window. setFramerateLimit(10);
+    window. setFramerateLimit(60);
+    window.setMouseCursorVisible(false);
 
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
+
+    RTSDrawable cursor(&window);
+    cursor.setFrame(AnimationHelper::animationFrame::CURSOR_PART_1);
 
     RTSMovable one(&window);
     one.setX(0);
@@ -53,6 +58,10 @@ int main()
         one.draw();
         two.draw();
         three.draw();
+
+        cursor.setX(Mouse::getPosition(window).x);
+        cursor.setY(Mouse::getPosition(window).y);
+        cursor.draw();
 
         window.display();
 
