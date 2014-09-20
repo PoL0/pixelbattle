@@ -7,6 +7,7 @@
 
 #include "rtsdrawable.h"
 #include "animationhelper.h"
+#include "rtscursor.h"
 
 #define civ AnimationHelper::spriteCiv
 #define des AnimationHelper::spriteDesc
@@ -19,9 +20,11 @@ int main()
 {
     RenderWindow window(sf::VideoMode(1920, 1080), "Pixel Battle");
     window. setFramerateLimit(60);
-    //window.setMouseCursorVisible(false);
+    window.setMouseCursorVisible(false);
 
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
+
+    RTSCursor cursor(&window);
 
     RectangleShape bg;
     bg.setSize(sf::Vector2f(1920, 1080));
@@ -45,6 +48,8 @@ int main()
         window.draw(bg);
 
         one.draw();
+
+        cursor.draw();
 
         window.display();
 

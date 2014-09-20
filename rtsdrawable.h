@@ -1,6 +1,8 @@
 // rtsdrawable.h
 // Trevor
 
+#pragma once
+
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
