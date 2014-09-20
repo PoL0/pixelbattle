@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Color.hpp>  // for use of Color class
+#include <SFML/Graphics/Image.hpp>  // for use of Color class
 #include <iostream>             // For the cout
 #include <unistd.h>
 
@@ -40,7 +41,7 @@ int main()
 
         window.draw(bg);
 
-        window.draw(* AnimationHelper::Instance()->getAnimation(typ::Character, civ::Neolithic, desc::Stand, dir::Right, Color::Red, 0, 0));
+        //window.draw(* AnimationHelper::Instance()->getAnimation(typ::Character, civ::Neolithic, desc::Stand, dir::Right, 0, 0));
 
         window.display();
 

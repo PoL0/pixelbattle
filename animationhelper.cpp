@@ -18,15 +18,11 @@ AnimationHelper* AnimationHelper::Instance(){
 	return m_pInstance;
 }
 
-Sprite* AnimationHelper::getAnimation(spriteType type, spriteCiv civ, spriteDesc description, spriteDir dir, Color teamColor, int x_draw, int y_draw){
-	return &sharedSprite;
-}
-
 void AnimationHelper::setSheet(std::string filepath){
-	if (! mainTexture.loadFromFile(filepath) ){
+	if (! sharedTexture.loadFromFile(filepath) ){
     	std::cout << "Error: Could not load file: " << filepath << "\n";
     }
-    sharedSprite.setTexture(mainTexture);
+    sharedSprite.setTexture(sharedTexture);
 }
 
 //Sprite* AnimationHelper::getSprite(int x_draw, int y_draw, int column, int row){

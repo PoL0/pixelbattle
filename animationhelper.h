@@ -5,20 +5,12 @@
 
 #include <SFML/Graphics.hpp>    	// for use of Texture and Sprite
 #include <SFML/Graphics/Color.hpp>  // for use of Color class
+#include <SFML/Graphics/Image.hpp>  // for use of Image class
 
 using namespace sf;
 
 class AnimationHelper {
 public:
-	enum class spriteType {
-		Character,
-		Helmet,
-		Animal,
-		Weapon,
-		Projectile,
-		MapTile,
-		Utility
-	};
 	enum class spriteCiv {
 		Neolithic,
 		Egyptian
@@ -33,16 +25,23 @@ public:
 		Right,
 		Left
 	};
+	enum class spriteColor {
+		Red,
+		Green,
+		Blue,
+		Purple
+	};
 
 	static AnimationHelper* Instance();
 	void setSheet(std::string filepath);
-	Sprite* getAnimation(spriteType type, spriteCiv civ, spriteDesc description, spriteDir dir, Color teamColor, int x_draw, int y_draw);
+
+	Sprite* getSoldier(spriteColor color, spriteDesc description, spriteDir dir, int x_draw, int y_draw);
+	Sprite* getHelmet(spriteColor color, spriteCiv civ, spriteDir dir, bool fleeing, int x_draw, int y_draw);
+
  private:
- 	AnimationHelper(){};
+ 	AnimationHelper(){}
  	static AnimationHelper* m_pInstance;
 
- 	//Sprite* getSprite(int x_draw, int y_draw, int column, int row);
-
- 	Texture mainTexture;
+ 	Texture sharedTexture;
 	Sprite  sharedSprite;
 };
