@@ -18,15 +18,19 @@ AnimationHelper* AnimationHelper::Instance(){
 	return m_pInstance;
 }
 
+Sprite* AnimationHelper::getAnimation(spriteType type, spriteCiv civ, spriteDesc description, spriteDir dir, Color teamColor, int x_draw, int y_draw){
+	return &sharedSprite;
+}
+
 void AnimationHelper::setSheet(std::string filepath){
 	if (! mainTexture.loadFromFile(filepath) ){
     	std::cout << "Error: Could not load file: " << filepath << "\n";
     }
-    mainSpriteSheet.setTexture(mainTexture);
+    sharedSprite.setTexture(mainTexture);
 }
 
-Sprite* AnimationHelper::getSprite(int x_draw, int y_draw, int column, int row){
-	mainSpriteSheet.setTextureRect(IntRect(row*16,column*16,16,16));
-	mainSpriteSheet.setPosition(Vector2f(x_draw, y_draw));
-	return &mainSpriteSheet;
-}
+//Sprite* AnimationHelper::getSprite(int x_draw, int y_draw, int column, int row){
+	//mainSpriteSheet.setTextureRect(IntRect(row*16,column*16,16,16));
+	//mainSpriteSheet.setPosition(Vector2f(x_draw, y_draw));
+	//return &mainSpriteSheet;
+//}
