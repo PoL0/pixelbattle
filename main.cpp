@@ -3,9 +3,6 @@
 #include <unistd.h>
 
 #include "animationhelper.h"
-#include "rtsdrawable.h"
-#include "rtsmovable.h"
-#include "cursor.h"
 
 using namespace sf;
 
@@ -16,23 +13,6 @@ int main()
     window.setMouseCursorVisible(false);
 
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
-
-    Cursor cursor(&window);
-
-    RTSMovable one(&window);
-    one.setX(20);
-    one.setY(20);
-    one.moveto(200,40);
-
-    RTSMovable two(&window);
-    two.setX(20);
-    two.setY(40);
-    two.moveto(200,60);
-
-    RTSMovable three(&window);
-    three.setX(20);
-    three.setY(60);
-    three.moveto(200,80);
 
     RectangleShape bg;
 
@@ -54,13 +34,7 @@ int main()
 
         window.draw(bg);
 
-        one.draw(frameCount);
-        two.draw(frameCount);
-        if(frameCount > 46){
-            three.draw(frameCount);
-        }
-
-        cursor.draw();
+        //window.draw(* AnimationHelper::Instance()->getAnimation(AnimationHelper::animationFrame::BLU_SOL_STD_RIT, 20, 20));
 
         window.display();
 
