@@ -25,8 +25,19 @@ void AnimationHelper::setSheet(std::string filepath){
     sharedSprite.setTexture(sharedTexture);
 }
 
-//Sprite* AnimationHelper::getSprite(int x_draw, int y_draw, int column, int row){
-	//mainSpriteSheet.setTextureRect(IntRect(row*16,column*16,16,16));
-	//mainSpriteSheet.setPosition(Vector2f(x_draw, y_draw));
-	//return &mainSpriteSheet;
-//}
+Sprite* AnimationHelper::getSoldier(spriteColor color, spriteDesc description, spriteDir dir, int x_draw, int y_draw){
+	int colorOffset = static_cast<unsigned int>(color);
+	int directionOffset = static_cast<unsigned int>(dir);
+	int frameOffset = static_cast<unsigned int>(description);
+
+	sharedSprite.setTextureRect(IntRect(frameOffset,(colorOffset*64)+(directionOffset*16),16,16));
+
+	sharedSprite.setPosition(Vector2f(x_draw, y_draw));
+	return &sharedSprite;
+}
+
+Sprite* AnimationHelper::getUtility(int x, int y, int width, int height, int x_draw, int y_draw){
+	sharedSprite.setTextureRect(IntRect(x,y,width,height));
+	sharedSprite.setPosition(Vector2f(x_draw, y_draw));
+	return &sharedSprite;
+}

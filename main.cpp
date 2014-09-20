@@ -1,15 +1,17 @@
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Color.hpp>  // for use of Color class
-#include <SFML/Graphics/Image.hpp>  // for use of Color class
+#include <SFML/Graphics/Image.hpp> 
 #include <iostream>             // For the cout
 #include <unistd.h>
 
+#include "rtsdrawable.h"
 #include "animationhelper.h"
 
-#define typ  AnimationHelper::spriteType
-#define civ  AnimationHelper::spriteCiv
-#define desc AnimationHelper::spriteDesc
-#define dir  AnimationHelper::spriteDir
+#define civ AnimationHelper::spriteCiv
+#define des AnimationHelper::spriteDesc
+#define dir AnimationHelper::spriteDir
+#define col AnimationHelper::spriteColor
 
 using namespace sf;
 
@@ -22,9 +24,10 @@ int main()
     AnimationHelper::Instance()->setSheet("sprites/sheet.png");
 
     RectangleShape bg;
-
     bg.setSize(sf::Vector2f(1920, 1080));
     bg.setFillColor(Color(100,181,59));
+
+    RTSDrawable one(&window);
 
     int frameCount = 0;
 
@@ -41,7 +44,7 @@ int main()
 
         window.draw(bg);
 
-        //window.draw(* AnimationHelper::Instance()->getAnimation(typ::Character, civ::Neolithic, desc::Stand, dir::Right, 0, 0));
+        one.draw();
 
         window.display();
 

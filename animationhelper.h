@@ -17,18 +17,24 @@ public:
 	};
 	enum class spriteDesc {
 		Stand,
-		Walk,
+		Walk1,
+		Walk2,
+		Slash1,
+		Slash2,
+		Shoot,
+		Flee1,
+		Flee2,
 	};
 	enum class spriteDir {
-		Up,
-		Down,
 		Right,
-		Left
+		Left,
+		Down,
+		Up
 	};
 	enum class spriteColor {
+		Blue,
 		Red,
 		Green,
-		Blue,
 		Purple
 	};
 
@@ -36,7 +42,9 @@ public:
 	void setSheet(std::string filepath);
 
 	Sprite* getSoldier(spriteColor color, spriteDesc description, spriteDir dir, int x_draw, int y_draw);
-	Sprite* getHelmet(spriteColor color, spriteCiv civ, spriteDir dir, bool fleeing, int x_draw, int y_draw);
+	//Sprite* getHelmet(spriteColor color, spriteCiv civ, spriteDir dir, bool fleeing, int x_draw, int y_draw);
+
+	Sprite* getUtility(int x, int y, int width, int height, int x_draw, int y_draw);
 
  private:
  	AnimationHelper(){}
