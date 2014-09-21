@@ -1,3 +1,5 @@
+// main.cpp
+// Defines the entry point of the application
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Color.hpp>  // for use of Color class

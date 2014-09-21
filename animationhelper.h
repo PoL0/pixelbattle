@@ -1,4 +1,10 @@
 // animation.h
+//
+// Used as a singleton helper class for all 
+// other objects in the rts "namespace". 
+// Shared instance necessary. Defines all the
+// references to sprites through enum
+// definition.
 
 #pragma once
 

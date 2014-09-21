@@ -1,4 +1,10 @@
 // rtsdrawable.h
+//
+// Defines a drawable object. Meant to
+// be a virtual object, but can be 
+// instantiated and still used. Base
+// class to RTSMovable, RTSCursor, and
+// RTSTile objects.
 
 #pragma once
 
