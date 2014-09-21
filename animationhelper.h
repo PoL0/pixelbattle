@@ -1,5 +1,4 @@
 // animation.h
-// Trevor
 
 #pragma once
 

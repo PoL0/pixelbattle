@@ -1,5 +1,4 @@
 // rtsdrawable.h
-// Trevor
 
 #pragma once
 

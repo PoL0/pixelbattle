@@ -1,5 +1,4 @@
 // rtscursor.h
-// Trevor
 
 #include <SFML/Graphics.hpp>
 

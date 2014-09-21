@@ -1,5 +1,5 @@
 // animationhelper.cpp
-// Trevor
+
 #include <SFML/Graphics.hpp>    // for use of Texture and Sprite
 #include <stddef.h> 			// for use of NULL
 #include <iostream>				// for use of cout
@@ -11,7 +11,6 @@ using namespace sf;
 AnimationHelper* AnimationHelper::m_pInstance = NULL; 
 
 AnimationHelper* AnimationHelper::Instance(){
-	// Only allow one instance of class to be generated.
 	if (!m_pInstance){   
 		m_pInstance = new AnimationHelper;
 	}
@@ -31,7 +30,6 @@ Sprite* AnimationHelper::getSoldier(spriteColor color, spriteDesc description, s
 	int frameOffset = static_cast<unsigned int>(description);
 
 	sharedSprite.setTextureRect(IntRect(frameOffset,(colorOffset*64)+(directionOffset*16),16,16));
-
 	sharedSprite.setPosition(Vector2f(x_draw, y_draw));
 	return &sharedSprite;
 }

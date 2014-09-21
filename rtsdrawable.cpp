@@ -1,5 +1,4 @@
 // rtsdrawable.cpp
-// Trevor
 
 #include <SFML/Graphics.hpp>
 
