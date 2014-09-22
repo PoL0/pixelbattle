@@ -11,7 +11,6 @@
 #include "animationhelper.h"
 #include "rtscursor.h"
 
-#define civ AnimationHelper::spriteCiv
 #define des AnimationHelper::spriteDesc
 #define dir AnimationHelper::spriteDir
 #define col AnimationHelper::spriteColor

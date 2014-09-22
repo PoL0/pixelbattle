@@ -16,9 +16,11 @@ using namespace sf;
 
 class AnimationHelper {
 public:
-	enum class spriteCiv {
-		Neolithic,
-		Egyptian
+	enum class HelmetType {
+		SabreToothHead,
+		BobbedWithBone,
+		AztecBirdHeaddress,
+		JaguarHead,
 	};
 	enum class spriteDesc {
 		Stand,
