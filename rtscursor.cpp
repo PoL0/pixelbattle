@@ -1,8 +1,4 @@
 // rtscursor.cpp
-//
-// Defines a cursor object used in the rts 
-// "namespace". Can be very simple drawn by
-// calling the draw functions.
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
