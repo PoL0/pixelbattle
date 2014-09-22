@@ -17,6 +17,7 @@ using namespace sf;
 class RTSMovable : public RTSDrawable {
 public:
 	RTSMovable(RenderWindow *window);
+	void draw(int frameCount);
 	void move();
 	void setTarget(double targetX, double targetY);
 protected:
@@ -25,6 +26,9 @@ protected:
 	double targetX;
 	double targetY;
 	double direction;
+
+	// For shared RTSSoldier and RTSAnimal classes
+	double health;
 
 	bool frame;
 	bool atTarget;

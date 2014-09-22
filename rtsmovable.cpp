@@ -2,11 +2,13 @@
 
 #include <SFML/Graphics.hpp>
 #include <math.h>       // For use of Atan2()
+#include <iostream>
 
 #include "animationhelper.h"
 #include "rtsmovable.h"
 
 #define PRECISION 4
+#define FRAMERATE 15
 
 #define PI 3.14
 
@@ -36,6 +38,15 @@ RTSMovable::RTSMovable(RenderWindow *window) : RTSDrawable (window){
 	teamColor = col::Blue;
 }
 
+void RTSMovable::draw(int frameCount){
+	if(frameCount%FRAMERATE != 0){
+		window->draw(* AnimationHelper::Instance()->getSoldier(teamColor, lastFrame, lastDir, x, y));
+		return;
+	}
+
+	move();
+}
+
 void RTSMovable::move(){
 
 	atTarget = (x < targetX+PRECISION && x > targetX-PRECISION && y < targetY+PRECISION && y > targetY-PRECISION);
@@ -57,12 +68,16 @@ void RTSMovable::move(){
 		y+=speed*sin(direction);
 
 		double dirDeg = direction * 180 / PI;
+		int dirDegInt = int(dirDeg)%360;
+		if(dirDegInt < 0){
+			dirDegInt+=360;
+		}
 
-		if(dirDeg <= 45 || dirDeg > 315){
+		if(dirDegInt <= 45 || dirDegInt >= 315){
 			lastDir = dir::Right;
-		} else if (dirDeg > 45 && dirDeg <= 135){
+		} else if (dirDegInt > 45 && dirDegInt <= 135){
 			lastDir = dir::Down;
-		} else if (dirDeg > 135 && dirDeg <= 225){
+		} else if (dirDegInt > 135 && dirDegInt <= 225){
 			lastDir = dir::Left;
 		} else {
 			lastDir = dir::Up;

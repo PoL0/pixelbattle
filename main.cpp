@@ -10,12 +10,13 @@
 #include "animationhelper.h"
 #include "rtscursor.h"
 #include "rtssoldier.h"
+#include "rtsunit.h"
 
 using namespace sf;
 
 int main()
 {
-    RenderWindow window(sf::VideoMode(1920, 1080), "Pixel Battle");
+    RenderWindow window(sf::VideoMode(1024, 768), "Pixel Battle");
     window. setFramerateLimit(60);
     window.setMouseCursorVisible(false);
 
@@ -24,13 +25,24 @@ int main()
     RTSCursor cursor(&window);
 
     RectangleShape bg;
-    bg.setSize(sf::Vector2f(1920, 1080));
+    bg.setSize(sf::Vector2f(1024, 768));
     bg.setFillColor(Color(100,181,59));
 
+    // Soldier declarations
     RTSSoldier one(&window);
-    one.setTeamColor(AnimationHelper::spriteColor::Red);
+    one.setTeamColor(AnimationHelper::spriteColor::Blue);
     one.setPosition(20,20);
-    one.setTarget(200,20);
+    one.setTarget(20,20);
+
+    RTSSoldier two(&window);
+    two.setTeamColor(AnimationHelper::spriteColor::Blue);
+    two.setPosition(500,400);
+    two.setTarget(500,400);
+
+    RTSUnit unit;
+    unit.addMovable(&one);
+    unit.addMovable(&two);
+    unit.setTargets(50,50);
 
     unsigned long frameCount = 0;
 
@@ -47,7 +59,7 @@ int main()
 
         window.draw(bg);
 
-        one.draw(frameCount);
+        unit.drawMovables(frameCount);
 
         cursor.draw();
 
