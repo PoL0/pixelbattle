@@ -21,6 +21,7 @@ public:
 		BobbedWithBone,
 		AztecBirdHeaddress,
 		JaguarHead,
+		EgyptianKhat,
 	};
 	enum class spriteDesc {
 		Stand,
@@ -49,7 +50,7 @@ public:
 	void setSheet(std::string filepath);
 
 	Sprite* getSoldier(spriteColor color, spriteDesc description, spriteDir dir, int x_draw, int y_draw);
-	//Sprite* getHelmet(spriteColor color, spriteCiv civ, spriteDir dir, bool fleeing, int x_draw, int y_draw);
+	//Sprite* getHelmet(spriteColor color, HelmetType helm, spriteDir dir, bool fleeing, int x_draw, int y_draw);
 
 	Sprite* getUtility(int x, int y, int width, int height, int x_draw, int y_draw);
 

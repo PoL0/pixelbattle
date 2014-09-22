@@ -29,7 +29,7 @@ Sprite* AnimationHelper::getSoldier(spriteColor color, spriteDesc description, s
 	int directionOffset = static_cast<unsigned int>(dir);
 	int frameOffset = static_cast<unsigned int>(description);
 
-	sharedSprite.setTextureRect(IntRect(frameOffset,(colorOffset*64)+(directionOffset*16),16,16));
+	sharedSprite.setTextureRect(IntRect(frameOffset*16,(colorOffset*64)+(directionOffset*16),16,16));
 	sharedSprite.setPosition(Vector2f(x_draw, y_draw));
 	return &sharedSprite;
 }

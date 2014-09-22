@@ -7,13 +7,9 @@
 #include <iostream>             // For the cout
 #include <unistd.h>
 
-#include "rtsdrawable.h"
 #include "animationhelper.h"
 #include "rtscursor.h"
-
-#define des AnimationHelper::spriteDesc
-#define dir AnimationHelper::spriteDir
-#define col AnimationHelper::spriteColor
+#include "rtsmovable.h"
 
 using namespace sf;
 
@@ -31,7 +27,9 @@ int main()
     bg.setSize(sf::Vector2f(1920, 1080));
     bg.setFillColor(Color(100,181,59));
 
-    RTSDrawable one(&window);
+    RTSMovable one(&window);
+    one.setPosition(20,20);
+    one.setTarget(200,20);
 
     int frameCount = 0;
 
@@ -48,7 +46,7 @@ int main()
 
         window.draw(bg);
 
-        one.draw();
+        one.draw(frameCount);
 
         cursor.draw();
 
