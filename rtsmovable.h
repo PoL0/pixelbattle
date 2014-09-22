@@ -1,6 +1,9 @@
 // rtsmovable.h
 // 
-//
+// Class for a movable object that has a target
+// and animates in sequence as it walks. Descended
+// from RTSDrawable. Will be base class for RTSSoldier,
+// RTSAnimal, and RTSProjectile.
 
 #pragma once
 
@@ -14,7 +17,7 @@ using namespace sf;
 class RTSMovable : public RTSDrawable {
 public:
 	RTSMovable(RenderWindow *window);
-	void draw(int frameCount);
+	void move();
 	void setTarget(double targetX, double targetY);
 protected:
 	double walkSpeed;

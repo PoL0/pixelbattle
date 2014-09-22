@@ -9,7 +9,7 @@
 
 #include "animationhelper.h"
 #include "rtscursor.h"
-#include "rtsmovable.h"
+#include "rtssoldier.h"
 
 using namespace sf;
 
@@ -27,11 +27,12 @@ int main()
     bg.setSize(sf::Vector2f(1920, 1080));
     bg.setFillColor(Color(100,181,59));
 
-    RTSMovable one(&window);
+    RTSSoldier one(&window);
+    one.setTeamColor(AnimationHelper::spriteColor::Red);
     one.setPosition(20,20);
     one.setTarget(200,20);
 
-    int frameCount = 0;
+    unsigned long frameCount = 0;
 
     // Game loop n shit
     while (window.isOpen()){
@@ -53,7 +54,6 @@ int main()
         window.display();
 
         frameCount++;
-
     }
 
     return 0;

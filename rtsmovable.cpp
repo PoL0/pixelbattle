@@ -6,7 +6,6 @@
 #include "animationhelper.h"
 #include "rtsmovable.h"
 
-#define FRAMERATE 15
 #define PRECISION 4
 
 #define PI 3.14
@@ -37,11 +36,7 @@ RTSMovable::RTSMovable(RenderWindow *window) : RTSDrawable (window){
 	teamColor = col::Blue;
 }
 
-void RTSMovable::draw(int frameCount){
-	if(frameCount%FRAMERATE != 0){
-		window->draw(* AnimationHelper::Instance()->getSoldier(teamColor, lastFrame, lastDir, x, y));
-		return;
-	}
+void RTSMovable::move(){
 
 	atTarget = (x < targetX+PRECISION && x > targetX-PRECISION && y < targetY+PRECISION && y > targetY-PRECISION);
 

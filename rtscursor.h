@@ -4,6 +4,8 @@
 // "namespace". Can be very simple drawn by
 // calling the draw functions.
 
+#pragma once
+
 #include <SFML/Graphics.hpp>
 
 #include "rtsdrawable.h"
